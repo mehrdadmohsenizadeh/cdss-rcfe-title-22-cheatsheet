@@ -1,0 +1,265 @@
+% =====================================================================
+%  SECTION 8 -- CAPACITY TIER MATRIX
+%  Capacity-driven requirements: admin hours, night staff, fire
+%  clearance, and the 6-or-fewer / 16+ "cliff edges."
+%  Tables only.  Max 10 words per cell.  Every row cited.
+%
+%  ACCURACY NOTE: Specific 20-hr / 40-hr admin-presence thresholds
+%  derive from CCLD program guidance interpreting §87405 + §1569.616.
+%  These values are widely accepted on the state exam; for licensing
+%  enforcement always verify against the current published guidance.
+% =====================================================================
+\SectionAccent{rcfeSlate}{rcfeSlateSoft}
+\section{Capacity Tier Matrix -- Scaling Requirements}
+
+% --------- 8.1  MASTER CAPACITY REFERENCE MATRIX ----------------
+\subsection{Master Capacity Reference Matrix}
+\begin{cheattablefive}
+  {>{\raggedright\arraybackslash}p{0.16\linewidth}
+   >{\raggedright\arraybackslash}p{0.20\linewidth}
+   >{\raggedright\arraybackslash}p{0.18\linewidth}
+   >{\raggedright\arraybackslash}p{0.20\linewidth}
+   >{\raggedright\arraybackslash}p{0.18\linewidth}}
+  {Capacity}
+  {Admin On-Premises}
+  {Night Staffing}
+  {Fire Clearance}
+  {Citation}
+\trrrr{\capSix}
+      {\adminHrsSmall}
+      {\nightOnCall}
+      {\fireSelfPres\ standard}
+      {\BOTH{87405}{1569.616}}
+\trrrr{\capMid}
+      {\adminHrsSmall}
+      {\nightOnCall}
+      {\fireSelfPres\ or non-amb}
+      {\BOTH{87405}{1569.698}}
+\trrrr{\capLarge}
+      {\adminHrsLarge}
+      {\nightOneAwake}
+      {Per resident mobility}
+      {\BOTH{87405}{1569.698}}
+\trrrr{\capXL}
+      {\adminHrsLarge}
+      {\nightOneAwake}
+      {Per resident mobility}
+      {\BOTH{87405}{1569.698}}
+\trrrr{\capXXL}
+      {\adminHrsLarge}
+      {\nightTwoAwake}
+      {Commercial-grade per code}
+      {\BOTH{87411}{1569.698}}
+\trrrr{\capMax}
+      {Full-time dedicated}
+      {Scaled per CCLD guidance}
+      {Commercial-grade per code}
+      {\BOTH{87411}{1569.698}}
+\end{cheattablefive}
+
+% --------- 8.2  CRITICAL CAPACITY CLIFF EDGES -------------------
+\subsection{Critical Capacity Cliff Edges}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.20\linewidth}
+   >{\raggedright\arraybackslash}p{0.52\linewidth}
+   >{\raggedright\arraybackslash}p{0.20\linewidth}}
+  {Threshold}
+  {Rule that Changes at this Cliff}
+  {Citation}
+\trr{6 or fewer}
+    {Treated as residential single-family use}
+    {\HS{1569.84}--\HS{1569.86}}
+\trr{6 or fewer}
+    {Cannot be excluded from residential zone}
+    {\HS{1569.85}}
+\trr{7+}
+    {Local commercial zoning may apply}
+    {Local code}
+\trr{15 or fewer}
+    {Night staff may remain on-call}
+    {\HS{1569.698}}
+\trr{16+}
+    {1 awake night staff required}
+    {\HS{1569.698}}
+\trr{16+}
+    {Admin presence rises to full-time}
+    {\BOTH{87405}{1569.616}}
+\trr{16+ combined}
+    {Multi-facility admin allocation rule}
+    {\TT{87405}}
+\trr{50+}
+    {Additional staffing scrutiny by CCLD}
+    {\TT{87411}}
+\trr{101--200}
+    {2 awake night staff required}
+    {\TT{87411}}
+\trr{201+}
+    {Awake staff scaled per guidance}
+    {\TT{87411}}
+\end{cheattablethree}
+
+% --------- 8.3  SIX-OR-FEWER SPECIAL STATUS ---------------------
+\subsection{Six-or-Fewer -- Special Legal Status}
+\begin{cheattable}
+  {>{\raggedright\arraybackslash}p{0.40\linewidth}
+   >{\raggedright\arraybackslash}p{0.56\linewidth}}
+  {Item}
+  {Rule \hfill Citation}
+\tr{Zoning treatment}
+   {\zoningSmall \hfill \HS{1569.84}}
+\tr{Anti-discrimination}
+   {Cannot exclude from residential zone \hfill \HS{1569.85}}
+\tr{Property tax classification}
+   {Residential property treatment \hfill \HS{1569.84}}
+\tr{Fire safety standard}
+   {Residential code typical \hfill \TT{87212}}
+\tr{Fire clearance}
+   {\fireSelfPres\ basis \hfill \TT{87212}}
+\tr{Licensing requirement}
+   {Same CDSS license required \hfill \TT{87155}}
+\tr{Background-check rules}
+   {Identical to larger facilities \hfill \HS{1522}}
+\tr{Liability insurance}
+   {Required regardless of size \hfill \TT{87218}}
+\tr{Caregiver coverage}
+   {1 caregiver minimum, 24/7 \hfill \TT{87411}}
+\tr{Awake night staff}
+   {Not required at this capacity \hfill \HS{1569.698}}
+\tr{Community-care license}
+   {Same fees, same renewal cycle \hfill \TT{87155}}
+\tr{Personal rights, reporting}
+   {Identical to larger facilities \hfill \BOTH{87468.1}{1569.269}}
+\end{cheattable}
+
+% --------- 8.4  16+ CAPACITY TRIGGERS ---------------------------
+\subsection{Capacity 16+ Triggers}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.42\linewidth}
+   >{\raggedright\arraybackslash}p{0.30\linewidth}
+   >{\raggedright\arraybackslash}p{0.20\linewidth}}
+  {Requirement Triggered}
+  {When?}
+  {Citation}
+\trr{1 awake night staff}{\awakeTrigger}{\HS{1569.698}}
+\trr{Admin on-premises rises}{\adminHrsLarge}{\TT{87405}}
+\trr{Multi-facility admin allocation}{Combined 16+ residents}{\TT{87405}}
+\trr{Enhanced disaster plan scrutiny}{Capacity 16+}{\TT{87212}}
+\trr{Heightened CCLD oversight}{Capacity 16+}{\TT{87411}}
+\trr{2 awake night staff}{Capacity 101--200}{\TT{87411}}
+\trr{Additional awake staff}{Capacity 201+}{\TT{87411}}
+\trr{Fire clearance review}{Per resident mobility}{\TT{87212}}
+\trr{Annual fire-clearance renewal}{All capacities}{\TT{87212}}
+\trr{Background re-clearance cycle}{All capacities; 4 yrs}{\HS{1522}}
+\end{cheattablethree}
+
+% --------- 8.5  FIRE-CLEARANCE LEVELS (MOBILITY-DRIVEN) ---------
+\subsection{Fire-Clearance Levels (Mobility-Driven)}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.24\linewidth}
+   >{\raggedright\arraybackslash}p{0.42\linewidth}
+   >{\raggedright\arraybackslash}p{0.28\linewidth}}
+  {Clearance Level}
+  {Resident Mobility Profile}
+  {Citation}
+\trr{Self-preservation}
+    {Can self-evacuate without staff aid}
+    {\TT{87212}}
+\trr{Non-ambulatory}
+    {Wheelchair, walker, cannot self-evacuate}
+    {\BOTH{87212}{87606}}
+\trr{Bedridden}
+    {Confined to bed; hospice waiver only}
+    {\BOTH{87615}{87633}}
+\trr{Renewal cycle}
+    {Annual fire-clearance verification}
+    {\TT{87212}}
+\trr{Fire authority approval}
+    {Local fire marshal signs off}
+    {\TT{87212}}
+\trr{Capacity-driven escalation}
+    {Larger = stricter occupancy code}
+    {Local + \TT{87212}}
+\end{cheattablethree}
+
+% --------- 8.6  DEMENTIA / SPECIAL CARE CAPACITY TRIGGERS -------
+\subsection{Dementia \& Special-Care Capacity Triggers}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.38\linewidth}
+   >{\raggedright\arraybackslash}p{0.38\linewidth}
+   >{\raggedright\arraybackslash}p{0.16\linewidth}}
+  {Item}
+  {Capacity Trigger}
+  {Citation}
+\trr{Secured-perimeter dementia care}
+    {Any size; CCLD waiver required}
+    {\TT{87705}}
+\trr{Dementia training for administrators}
+    {Any RCFE serving dementia residents}
+    {\HS{1569.625}}
+\trr{Dementia training for direct care staff}
+    {Staff caring for dementia residents}
+    {\HS{1569.626}}
+\trr{Hospice care waiver}
+    {Any size; physician + waiver}
+    {\TT{87633}}
+\trr{Restricted health-condition acceptance}
+    {Any size; specific waiver per condition}
+    {\TT{87615}}
+\trr{Bedridden waiver}
+    {Hospice or terminal status only}
+    {\TT{87606}}
+\trr{Postural-support documentation}
+    {Any size; appraisal-based}
+    {\TT{87468.1}}
+\trr{Two-resident bedroom maximum}
+    {All capacities; no exception}
+    {\TT{87583}}
+\end{cheattablethree}
+
+% --------- 8.7  COMMON CAPACITY MISTAKES ------------------------
+\subsection{Common Capacity \& Staffing Mistakes}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.32\linewidth}
+   >{\raggedright\arraybackslash}p{0.42\linewidth}
+   >{\raggedright\arraybackslash}p{0.18\linewidth}}
+  {Misconception}
+  {Correct Rule}
+  {Citation}
+\trr{``Six-or-fewer needs no license''}
+    {CDSS license still required}
+    {\TT{87155}}
+\trr{``Awake night staff must be a nurse''}
+    {Caregiver, awake, alert -- not nurse}
+    {\TT{87411}}
+\trr{``On-call same as awake''}
+    {Awake = physically present, alert}
+    {\TT{87411}}
+\trr{``Substitute admin needs no qualifications''}
+    {Must meet same requirements}
+    {\TT{87405}}
+\trr{``Larger facilities allow 3 per bedroom''}
+    {Two-resident maximum, all sizes}
+    {\TT{87583}}
+\trr{``Awake staff trigger is 15+''}
+    {Trigger is 16 or more}
+    {\HS{1569.698}}
+\trr{``Six-or-fewer = no zoning protection''}
+    {Residential zoning protection applies}
+    {\HS{1569.84}--\HS{1569.86}}
+\trr{``Admin can supervise unlimited facilities''}
+    {Multi-facility allocation rule applies}
+    {\TT{87405}}
+\trr{``Hospice waiver scales by capacity''}
+    {Waiver granted per resident, not size}
+    {\TT{87633}}
+\trr{``Larger requires lower DCS ratio''}
+    {Ratio = sufficient to meet needs}
+    {\TT{87411}}
+\trr{``Non-ambulatory accepted without clearance''}
+    {Requires non-ambulatory fire clearance}
+    {\BOTH{87212}{87606}}
+\trr{``Annual fire renewal optional small RCFE''}
+    {Annual renewal required, all sizes}
+    {\TT{87212}}
+\end{cheattablethree}
+\clearpage

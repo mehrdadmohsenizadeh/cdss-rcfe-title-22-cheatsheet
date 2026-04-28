@@ -48,6 +48,12 @@
 \definecolor{rcfeSageSoft} {HTML}{DDE7DA}
 \definecolor{rcfeTeal}     {HTML}{1F6E7D}  % critical values
 \definecolor{rcfeTealSoft} {HTML}{D6E7EB}
+\definecolor{rcfeAmber}    {HTML}{B5651D}  % reporting / urgency
+\definecolor{rcfeAmberSoft}{HTML}{F4E0C5}
+\definecolor{rcfePlum}     {HTML}{5C3A6E}  % medication / pharmacy
+\definecolor{rcfePlumSoft} {HTML}{E4D6EC}
+\definecolor{rcfeSlate}    {HTML}{3F5A6E}  % capacity / structural
+\definecolor{rcfeSlateSoft}{HTML}{D6DDE3}
 \definecolor{rcfeStripe}   {HTML}{F4F2EC}  % zebra row
 \definecolor{rcfeRule}     {HTML}{6B6B6B}  % grid lines
 \definecolor{rcfeInk}      {HTML}{1A1A1A}  % body text
@@ -205,9 +211,77 @@
   \endgroup
 }
 
+% Four-column zebra-banded longtable
+\newenvironment{cheattablefour}[5]
+{%
+  \begingroup
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}%
+  \setlength{\LTpre}{4pt}\setlength{\LTpost}{4pt}%
+  \rowcolors{2}{white}{rcfeStripe}%
+  \begin{longtable}{|#1|}
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} &
+  {\color{white}\sffamily\bfseries #4} &
+  {\color{white}\sffamily\bfseries #5} \\ \hline
+  \endfirsthead
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} &
+  {\color{white}\sffamily\bfseries #4} &
+  {\color{white}\sffamily\bfseries #5} \\ \hline
+  \endhead
+  \hline \multicolumn{4}{r}{\footnotesize\itshape\color{rcfeRule}continued on next page \ldots}\\
+  \endfoot
+  \hline
+  \endlastfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+
+% Five-column zebra-banded longtable
+\newenvironment{cheattablefive}[6]
+{%
+  \begingroup
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}%
+  \setlength{\LTpre}{4pt}\setlength{\LTpost}{4pt}%
+  \rowcolors{2}{white}{rcfeStripe}%
+  \begin{longtable}{|#1|}
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} &
+  {\color{white}\sffamily\bfseries #4} &
+  {\color{white}\sffamily\bfseries #5} &
+  {\color{white}\sffamily\bfseries #6} \\ \hline
+  \endfirsthead
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} &
+  {\color{white}\sffamily\bfseries #4} &
+  {\color{white}\sffamily\bfseries #5} &
+  {\color{white}\sffamily\bfseries #6} \\ \hline
+  \endhead
+  \hline \multicolumn{5}{r}{\footnotesize\itshape\color{rcfeRule}continued on next page \ldots}\\
+  \endfoot
+  \hline
+  \endlastfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+
 % Row helpers (no zebra macro -- xcolor's \rowcolors handles banding)
 \newcommand{\tr}[2]{#1 & #2 \\ \hline}
 \newcommand{\trr}[3]{#1 & #2 & #3 \\ \hline}
+\newcommand{\trrr}[4]{#1 & #2 & #3 & #4 \\ \hline}
+\newcommand{\trrrr}[5]{#1 & #2 & #3 & #4 & #5 \\ \hline}
 
 % ---------------------------------------------------------------------
 %  CALLOUT BOX -- used on cover & disclaimer only (NOT in core tables)
