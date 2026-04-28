@@ -1,0 +1,297 @@
+% =====================================================================
+%  SECTION 6 -- REPORTING MATRIX
+%  Incident type x notify-whom x timeframe x method/form x citation.
+%  Tables only.  Max 10 words per cell.  Every row cited.
+% =====================================================================
+\SectionAccent{rcfeAmber}{rcfeAmberSoft}
+\section{Reporting Matrix -- Who, When, How}
+
+% --------- 6.1  MASTER REPORTING DECISION MATRIX ----------------
+\subsection{Master Reporting Decision Matrix}
+\begin{cheattablefour}
+  {>{\raggedright\arraybackslash}p{0.27\linewidth}
+   >{\raggedright\arraybackslash}p{0.24\linewidth}
+   >{\raggedright\arraybackslash}p{0.22\linewidth}
+   >{\raggedright\arraybackslash}p{0.19\linewidth}}
+  {Incident / Trigger}
+  {Notify Whom}
+  {Timeframe \& Method}
+  {Citation}
+
+\trrr{Resident death (any cause)}
+     {Licensing; family; physician}
+     {24h phone; 7d \licUIR}
+     {\TT{87211}}
+\trrr{Suspicious or unattended death}
+     {911; Coroner; Licensing; family}
+     {Immediate phone}
+     {\TT{87211}; Govt~§27491}
+\trrr{Suspected elder abuse (in-facility)}
+     {Ombudsman; Licensing; police}
+     {Immediate phone; \absWritten}
+     {\HS{15630}}
+\trrr{Suspected elder abuse (community)}
+     {APS; local law enforcement}
+     {Immediate phone; \absWritten}
+     {\HS{15630}}
+\trrr{Physical assault (resident victim/aggressor)}
+     {Police; Licensing}
+     {Immediate phone}
+     {\TT{87211}; \HS{15630}}
+\trrr{Sexual abuse / misconduct}
+     {Police; Ombudsman; Licensing}
+     {Immediate phone}
+     {\HS{15630}}
+\trrr{Financial abuse / exploitation}
+     {APS or Ombudsman; Licensing}
+     {Immediate phone; \absWritten}
+     {\HS{15630}}
+\trrr{Theft of property (\theftThreshold)}
+     {Police; Licensing}
+     {\theftWindow}
+     {\TT{87211}}
+\trrr{Injury requiring medical treatment}
+     {Licensing; family; physician}
+     {24h phone; 7d \licUIR}
+     {\TT{87211}}
+\trrr{Resident missing or wandering}
+     {Family; police; Licensing}
+     {Immediate phone}
+     {\TT{87211}}
+\trrr{Suicide attempt}
+     {Licensing; family; physician}
+     {24h phone; 7d \licUIR}
+     {\TT{87211}}
+\trrr{Communicable disease outbreak}
+     {Local Health; Licensing}
+     {Immediate phone}
+     {\TT{87211}; Title~17}
+\trrr{Fire, explosion, or natural disaster}
+     {Fire authority; Licensing}
+     {Immediate phone}
+     {\TT{87211}; \TT{87212}}
+\trrr{Epidemic or food-borne poisoning}
+     {Local Health; Licensing}
+     {Immediate phone}
+     {\TT{87211}}
+\trrr{Resident-to-resident altercation}
+     {Licensing; family of involved}
+     {24h phone; 7d \licUIR}
+     {\TT{87211}}
+\trrr{Mental / emotional upset needing treatment}
+     {Licensing; family; physician}
+     {24h phone; 7d \licUIR}
+     {\TT{87211}}
+\trrr{Use of any restraint}
+     {Licensing}
+     {24h phone; 7d \licUIR}
+     {\TT{87211}; \TT{87468.1}}
+\trrr{Significant change of resident condition}
+     {Physician; family; reappraisal team}
+     {Within 14 days}
+     {\TT{87463}}
+\trrr{Eviction -- standard}
+     {Resident; representative; Ombudsman}
+     {\noticeEvictThirty}
+     {\BOTH{87224}{1569.682}}
+\trrr{Eviction -- danger to others}
+     {Resident; representative; Ombudsman}
+     {\noticeEvictThree}
+     {\TT{87224}}
+\trrr{Facility closure}
+     {Residents; family; Licensing}
+     {\noticeClosure}
+     {\HS{1569.682}}
+\trrr{Rate increase}
+     {Resident; representative}
+     {\noticeRate}
+     {\HS{1569.655}}
+\trrr{Administrator change}
+     {Licensing}
+     {Within 15 calendar days}
+     {\TT{87405}}
+\trrr{Plan of Operation change}
+     {Licensing}
+     {30 days written}
+     {\TT{87208}}
+\trrr{Subsequent arrest of cleared staff}
+     {Licensing; DOJ}
+     {Immediate}
+     {\HS{1522}}
+\trrr{Refusal to admit licensing inspector}
+     {(triggers civil penalty)}
+     {Penalty effective immediately}
+     {\HS{1569.32}}
+\end{cheattablefour}
+
+% --------- 6.2  NOTIFICATION TARGETS AT A GLANCE -----------------
+\subsection{Notification Targets at a Glance}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.28\linewidth}
+   >{\raggedright\arraybackslash}p{0.38\linewidth}
+   >{\raggedright\arraybackslash}p{0.26\linewidth}}
+  {Entity}
+  {Role}
+  {Hotline / Citation}
+\trr{Community Care Licensing (CCLD)}
+    {Regulator; license enforcement; complaints}
+    {\ccldComplaint \hfill \HS{1569.32}}
+\trr{Long-Term Care Ombudsman}
+    {Resident advocate; in-facility abuse}
+    {\ombudsmanCRISIS \hfill W\&I~§9711}
+\trr{Adult Protective Services (APS)}
+    {Community / off-site elder abuse}
+    {\apsHotline \hfill \HS{15630}}
+\trr{Local Law Enforcement}
+    {Crimes; immediate danger; theft}
+    {911 \hfill \HS{15630}}
+\trr{Local Health Department}
+    {Communicable disease; epidemics}
+    {County hotline \hfill Title~17}
+\trr{Coroner / Medical Examiner}
+    {Unattended or suspicious deaths}
+    {County office \hfill Govt~§27491}
+\trr{California DOJ / FBI}
+    {Criminal record clearances; subsequent arrests}
+    {Live Scan \hfill \HS{1522}}
+\trr{Resident's physician}
+    {Health changes; medical orders}
+    {On record \hfill \TT{87463}}
+\trr{Family / responsible party}
+    {Death, injury, transfers, finances}
+    {Per record \hfill \TT{87211}}
+\trr{Designated representative}
+    {Notices, decisions, advocacy}
+    {Per record \hfill \TT{87468.2}}
+\trr{Local fire authority}
+    {Fire clearance, emergencies, drills}
+    {Local \hfill \TT{87212}}
+\end{cheattablethree}
+
+% --------- 6.3  MANDATED REPORTER RULES --------------------------
+\subsection{Mandated Reporter Rules (Elder Abuse)}
+\begin{cheattable}
+  {>{\raggedright\arraybackslash}p{0.52\linewidth}
+   >{\raggedright\arraybackslash}p{0.40\linewidth}}
+  {Rule}
+  {Detail \hfill Citation}
+\tr{All RCFE staff = ``care custodians''}
+   {Mandated reporters by statute \hfill W\&I~§15610.17}
+\tr{Telephone report required}
+   {\absPhone \hfill W\&I~§15630(b)}
+\tr{Written report required}
+   {\absWritten\ on \socAbuse \hfill W\&I~§15630(b)}
+\tr{Cross-report to law enforcement}
+   {Physical, sexual abuse \hfill W\&I~§15630(b)}
+\tr{Reporter identity confidentiality}
+   {Protected by statute \hfill W\&I~§15633.5}
+\tr{Good-faith immunity}
+   {Civil and criminal protection \hfill W\&I~§15634}
+\tr{Duty cannot be delegated}
+   {Each individual must personally report \hfill W\&I~§15630(a)}
+\tr{Reasonable suspicion sufficient}
+   {Proof of abuse not required \hfill W\&I~§15630(a)}
+\tr{Failure to report}
+   {\absPenaltyMisd; \absPenaltyFineLow \hfill W\&I~§15634}
+\tr{Failure causing death/great bodily injury}
+   {\absPenaltyFineHigh \hfill W\&I~§15634}
+\tr{HIPAA exempt}
+   {Mandated reports overrule confidentiality \hfill 45~CFR~§164.512}
+\tr{Internal documentation insufficient}
+   {External report still required \hfill \TT{87211}}
+\end{cheattable}
+
+% --------- 6.4  LIC 624 -- UIR REQUIRED CONTENTS -----------------
+\subsection{LIC 624 Unusual Incident Report -- Required Contents}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.40\linewidth}
+   >{\raggedright\arraybackslash}p{0.30\linewidth}
+   >{\raggedright\arraybackslash}p{0.22\linewidth}}
+  {Field / Element}
+  {Required Detail}
+  {Citation}
+\trr{Facility name and license number}{Yes}{\TT{87211}}
+\trr{Date and time of incident}{Yes}{\TT{87211}}
+\trr{Resident(s) involved}{Yes; full name}{\TT{87211}}
+\trr{Description of incident}{Factual narrative}{\TT{87211}}
+\trr{Witnesses}{Names and titles}{\TT{87211}}
+\trr{Immediate action taken}{Yes}{\TT{87211}}
+\trr{Medical treatment provided}{Yes; provider name}{\TT{87211}}
+\trr{Notifications made}{Who, when, by whom}{\TT{87211}}
+\trr{Plan to prevent recurrence}{Yes}{\TT{87211}}
+\trr{Submitted to}{Regional Licensing Office}{\TT{87211}}
+\trr{Phone-report deadline}{\rptPhone}{\TT{87211}}
+\trr{Written-report deadline}{\rptWritten}{\TT{87211}}
+\trr{Retain copy in resident record}{Yes; minimum \recRetention}{\TT{87506}}
+\end{cheattablethree}
+
+% --------- 6.5  DEATH-REPORTING SEQUENCE -------------------------
+\subsection{Death-Reporting Sequence}
+\begin{cheattablefour}
+  {>{\raggedright\arraybackslash}p{0.08\linewidth}
+   >{\raggedright\arraybackslash}p{0.42\linewidth}
+   >{\raggedright\arraybackslash}p{0.24\linewidth}
+   >{\raggedright\arraybackslash}p{0.18\linewidth}}
+  {Step}
+  {Action}
+  {Timeframe}
+  {Citation}
+\trrr{1}{Confirm death; secure scene}{Immediately}{\TT{87211}}
+\trrr{2}{Call 911 if unattended or suspicious}{Immediately}{Govt~§27491}
+\trrr{3}{Notify Licensing by telephone}{\rptPhone}{\TT{87211}}
+\trrr{4}{Notify next of kin / representative}{Without delay}{\TT{87211}}
+\trrr{5}{Notify physician on record}{Without delay}{\TT{87463}}
+\trrr{6}{Notify Ombudsman if abuse suspected}{Immediately}{\HS{15630}}
+\trrr{7}{Document on \licUIR}{\rptWritten}{\TT{87211}}
+\trrr{8}{Update \rosterForm}{Promptly}{\TT{87217}}
+\trrr{9}{Return personal property to family}{Within 30 days}{\TT{87217}}
+\trrr{10}{Refund unearned advance payment}{Within 30 days}{\TT{87507}}
+\end{cheattablefour}
+
+% --------- 6.6  COMMON REPORTING PITFALLS ------------------------
+\subsection{Common Reporting Pitfalls}
+\begin{cheattablethree}
+  {>{\raggedright\arraybackslash}p{0.34\linewidth}
+   >{\raggedright\arraybackslash}p{0.40\linewidth}
+   >{\raggedright\arraybackslash}p{0.18\linewidth}}
+  {Misconception}
+  {Correct Rule}
+  {Citation}
+\trr{``It was just an accident''}
+    {Injury w/ medical treatment is reportable}
+    {\TT{87211}}
+\trr{``Resident asked us not to report''}
+    {Mandated duty cannot be waived}
+    {W\&I~§15630}
+\trr{``Family will handle it''}
+    {Report duty stands regardless}
+    {W\&I~§15630}
+\trr{``It happened off-site''}
+    {Reportable if it affects resident}
+    {\TT{87211}; W\&I~§15630}
+\trr{``I told my supervisor''}
+    {Each individual must personally report}
+    {W\&I~§15630(a)}
+\trr{``We're not sure it's abuse''}
+    {Reasonable suspicion triggers duty}
+    {W\&I~§15630(a)}
+\trr{``It's just staff gossip''}
+    {Investigate; report if grounds exist}
+    {W\&I~§15630}
+\trr{``We documented it internally''}
+    {Internal records do not satisfy duty}
+    {\TT{87211}}
+\trr{``Resident moved out before report''}
+    {Duty attaches when incident occurred}
+    {\TT{87211}}
+\trr{``HIPAA prevents us from reporting''}
+    {Mandated reports are HIPAA-exempt}
+    {45~CFR~§164.512}
+\trr{``Phoning is enough''}
+    {Written report still required \absWritten}
+    {W\&I~§15630(b)}
+\trr{``Calling 911 covers everything''}
+    {Licensing must also be notified}
+    {\TT{87211}}
+\end{cheattablethree}
+\clearpage
