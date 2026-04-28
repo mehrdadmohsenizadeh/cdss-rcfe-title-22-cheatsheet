@@ -1,0 +1,65 @@
+% =====================================================================
+%  00-cover.tex -- cover page, disclaimer, how-to-use, table of contents
+% =====================================================================
+
+% --- COVER ----------------------------------------------------------
+\begin{titlepage}
+  \rcfeCover
+  \vspace{18pt}
+
+  \SectionAccent{rcfeNavy}{rcfeGoldSoft}
+  \begin{rcfecallout}[title={How to Use This Cheat Sheet}]
+  \footnotesize
+  \begin{description}[leftmargin=5.6em,labelwidth=5em,labelsep=0.5em,itemsep=2pt,topsep=2pt]
+    \item[Section 1] Master Timeline -- every time-based deadline.
+    \item[Section 2] Critical Values -- temperatures, dimensions, ratios.
+    \item[Section 3] SHALL vs.\ MAY -- 15+ high-risk wording traps.
+    \item[Section 4] Red Flag / Penalty -- prohibited acts \& dollar fines.
+    \item[Section 5] Citation Index -- alphabetical jump table.
+  \end{description}
+  \end{rcfecallout}
+
+  \vspace{10pt}
+  \SectionAccent{rcfeCrimson}{rcfeCrimsonSoft}
+  \begin{rcfecallout}[title={Mandatory Disclaimer}]
+  \footnotesize
+  This reference excerpts only language explicitly stated in the
+  California Code of Regulations, Title~22, Division~6, Chapter~8 and
+  the California Health \& Safety Code §1569 series. Where Title~22 and
+  the H\&S Code differ, both are noted and the stricter requirement is
+  flagged. Every entry includes its specific section citation. Always
+  verify against the current published code before relying on any item
+  for licensing, enforcement, or examination purposes. This product is
+  a study aid; it is not legal advice and is not affiliated with the
+  California Department of Social Services or the Community Care
+  Licensing Division.
+  \end{rcfecallout}
+\end{titlepage}
+
+% --- TABLE OF CONTENTS ---------------------------------------------
+\SectionAccent{rcfeNavy}{rcfeGoldSoft}
+\begingroup
+\renewcommand{\baselinestretch}{1.15}\normalsize
+\tableofcontents
+\endgroup
+\clearpage
+
+% --- LEGEND ---------------------------------------------------------
+\SectionAccent{rcfeNavy}{rcfeGoldSoft}
+{\sffamily\Large\bfseries\color{rcfeNavy} Legend \& Citation Key}\par\vspace{2pt}
+\noindent{\color{rcfeNavy}\rule{\linewidth}{1pt}}\par\vspace{8pt}
+
+\footnotesize
+\begin{cheattable}{>{\raggedright\arraybackslash}p{0.30\linewidth} >{\raggedright\arraybackslash}p{0.66\linewidth}}{Symbol}{Meaning}
+\tr{\TT{XXXXX}}{California Code of Regulations, Title~22, §XXXXX}
+\tr{\HS{1569.xx}}{Health \& Safety Code, §1569.xx}
+\tr{\BOTH{T22}{HS}}{Both citations apply; stricter governs}
+\tr{\shall}{Mandatory action; no discretion}
+\tr{\may}{Permissive action; discretion allowed}
+\tr{\shallnot}{Absolute prohibition}
+\tr{LIC \#}{Licensing Form Number (CDSS/CCLD)}
+\tr{DCS}{Direct Care Staff}
+\tr{POC}{Plan of Correction}
+\tr{POO}{Plan of Operation}
+\end{cheattable}
+\clearpage

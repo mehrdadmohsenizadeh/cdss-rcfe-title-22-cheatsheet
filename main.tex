@@ -1,0 +1,42 @@
+% =====================================================================
+%  RCFE Title 22 + H&S §1569 -- Open-Book State Exam Cheat Sheet
+%  Compile with: pdflatex (Overleaf default).  Run twice for TOC + links.
+%  Architecture:
+%    main.tex                       -- shell only; calls every other file
+%    rcfecheat.sty                  -- packages, colors, tables, commands
+%    config/variables.tex           -- ALL numbers/strings/citations as macros
+%    config/metadata.tex            -- title, edition, author, palette overrides
+%    sections/00-cover.tex          -- cover, disclaimer, TOC
+%    sections/01-master-timeline.tex
+%    sections/02-critical-values.tex
+%    sections/03-shall-vs-may.tex
+%    sections/04-red-flag-penalties.tex
+%    sections/05-citation-index.tex
+% =====================================================================
+\documentclass[10pt,letterpaper,oneside]{article}
+
+% --- Load custom package (handles ALL packages, colors, table envs) ---
+\usepackage{rcfecheat}
+
+% --- Variables (numbers, dates, names) and metadata (title/edition) ---
+\input{config/variables}
+\input{config/metadata}
+
+\begin{document}
+
+% --- Front matter (Roman numerals) ---
+\pagenumbering{roman}
+\input{sections/00-cover}
+
+% --- Core exam tables (Arabic numerals) ---
+\clearpage
+\pagenumbering{arabic}
+\input{sections/01-master-timeline}
+\input{sections/02-critical-values}
+\input{sections/03-shall-vs-may}
+\input{sections/04-red-flag-penalties}
+
+% --- Bonus rapid-lookup citation index ---
+\input{sections/05-citation-index}
+
+\end{document}

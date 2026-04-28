@@ -1,0 +1,26 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.toc
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.run.xml
+
+# Overleaf cache
+.texpadtmp/
+
+# OS
+.DS_Store
+Thumbs.db
