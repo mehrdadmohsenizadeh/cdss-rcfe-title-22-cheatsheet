@@ -1,0 +1,256 @@
+% =====================================================================
+%  rcfecheat.sty -- Custom package for the RCFE Cheat Sheet
+%  Holds: package loads, color palette, fonts, table environments,
+%         section formatting, header/footer, callout boxes, helper macros.
+%  Edit this file to restyle the entire document.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rcfecheat}[2026/04/28 RCFE Title 22 Cheat Sheet style]
+
+% ---------------------------------------------------------------------
+%  CORE PACKAGES
+% ---------------------------------------------------------------------
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{microtype}
+\RequirePackage[letterpaper,top=0.65in,bottom=0.85in,left=0.55in,right=0.55in,headheight=14pt,headsep=10pt,footskip=24pt]{geometry}
+\RequirePackage[table,dvipsnames]{xcolor}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{booktabs}
+\RequirePackage{makecell}
+\RequirePackage{tabularx}
+\RequirePackage{ragged2e}
+\RequirePackage{colortbl}
+\RequirePackage{graphicx}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{titletoc}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\RequirePackage{etoolbox}
+\RequirePackage{calc}
+\RequirePackage[colorlinks=true,bookmarksnumbered=true,bookmarksopen=true,pdfdisplaydoctitle=true]{hyperref}
+\RequirePackage{bookmark}
+
+% ---------------------------------------------------------------------
+%  COLOR PALETTE   (override in config/metadata.tex if desired)
+% ---------------------------------------------------------------------
+\definecolor{rcfeNavy}     {HTML}{1B3A57}  % primary brand
+\definecolor{rcfeNavyDeep} {HTML}{122638}  % cover background
+\definecolor{rcfeGold}     {HTML}{C9A227}  % accent
+\definecolor{rcfeGoldSoft} {HTML}{F4E7B7}  % soft fill
+\definecolor{rcfeCrimson}  {HTML}{A8232B}  % warnings / red flags
+\definecolor{rcfeCrimsonSoft}{HTML}{F6D9DB}
+\definecolor{rcfeSage}     {HTML}{4A6B47}  % permissive (MAY)
+\definecolor{rcfeSageSoft} {HTML}{DDE7DA}
+\definecolor{rcfeTeal}     {HTML}{1F6E7D}  % critical values
+\definecolor{rcfeTealSoft} {HTML}{D6E7EB}
+\definecolor{rcfeStripe}   {HTML}{F4F2EC}  % zebra row
+\definecolor{rcfeRule}     {HTML}{6B6B6B}  % grid lines
+\definecolor{rcfeInk}      {HTML}{1A1A1A}  % body text
+
+% Per-section accent (set by \SectionAccent before each long table)
+\colorlet{rcfeAccent}{rcfeNavy}
+\colorlet{rcfeAccentSoft}{rcfeGoldSoft}
+\newcommand{\SectionAccent}[2]{\colorlet{rcfeAccent}{#1}\colorlet{rcfeAccentSoft}{#2}}
+
+% ---------------------------------------------------------------------
+%  HYPERREF METADATA (linked to variables.tex via \DocTitle etc.)
+% ---------------------------------------------------------------------
+\AtBeginDocument{%
+  \hypersetup{%
+    pdftitle    = {\DocTitle\ -- \DocSubtitle},%
+    pdfauthor   = {\DocAuthor},%
+    pdfsubject  = {\DocSubject},%
+    pdfkeywords = {\DocKeywords},%
+    linkcolor   = rcfeNavy,%
+    urlcolor    = rcfeTeal,%
+    citecolor   = rcfeNavy%
+  }%
+}
+
+% ---------------------------------------------------------------------
+%  HEADER / FOOTER
+% ---------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\footnotesize\color{rcfeNavy}\textbf{\DocShortTitle}}
+\fancyhead[R]{\footnotesize\color{rcfeNavy}\nouppercase{\leftmark}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\fancyfoot[L]{\footnotesize\color{rcfeRule}\DocEdition\ \textbar\ \DocYear}
+\fancyfoot[C]{\footnotesize\color{rcfeRule}\DocAuthor}
+\fancyfoot[R]{\footnotesize\color{rcfeNavy}\textbf{\thepage}}
+
+\fancypagestyle{cover}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ---------------------------------------------------------------------
+%  SECTION FORMATTING -- color tab on the left edge of section title
+% ---------------------------------------------------------------------
+\titleformat{\section}[block]
+  {\sffamily\Large\bfseries\color{rcfeAccent}}
+  {\colorbox{rcfeAccent}{\color{white}\hspace{4pt}\thesection\hspace{4pt}}}
+  {0.65em}
+  {}
+  [{\vspace{-2pt}\color{rcfeAccent}\titlerule[1pt]}]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\titleformat{\subsection}[block]
+  {\sffamily\large\bfseries\color{rcfeAccent}}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+
+% ---------------------------------------------------------------------
+%  TABLE OF CONTENTS STYLING
+% ---------------------------------------------------------------------
+\renewcommand{\contentsname}{\color{rcfeNavy}Contents}
+\titlecontents{section}[1.6em]
+  {\addvspace{4pt}\sffamily\bfseries\color{rcfeNavy}}
+  {\contentslabel{1.6em}}
+  {\hspace*{-1.6em}}
+  {\titlerule*[6pt]{.}\contentspage}
+
+% ---------------------------------------------------------------------
+%  CITATION MACROS
+%    \TT{87211}   -> "T22 §87211"     (Title 22)
+%    \HS{1569.49} -> "H&S §1569.49"  (Health & Safety Code)
+%    \BOTH{a}{b}  -> "T22 §a / H&S §b"
+%  NOTE: avoid \tt -- it is the legacy LaTeX typewriter font command.
+% ---------------------------------------------------------------------
+\newcommand{\TT}[1]{\textbf{\textcolor{rcfeNavy}{T22 §#1}}}
+\newcommand{\HS}[1]{\textbf{\textcolor{rcfeCrimson}{H\&S §#1}}}
+\newcommand{\BOTH}[2]{\TT{#1}\,/\,\HS{#2}}
+
+% Inline keyword styling
+\newcommand{\shall}{\textbf{\textcolor{rcfeCrimson}{SHALL}}}
+\newcommand{\may}{\textbf{\textcolor{rcfeSage}{MAY}}}
+\newcommand{\shallnot}{\textbf{\textcolor{rcfeCrimson}{SHALL NOT}}}
+
+% Degree symbol convenience
+\providecommand{\degF}{\textdegree F}
+
+% ---------------------------------------------------------------------
+%  LONGTABLE ENVIRONMENT -- consistent grid, banded rows, header repeat
+%  Usage:
+%    \begin{cheattable}{p{0.30\linewidth} p{0.66\linewidth}}{Header A}{Header B}
+%       cell & cell \\
+%    \end{cheattable}
+% ---------------------------------------------------------------------
+\arrayrulecolor{rcfeRule}
+\setlength{\arrayrulewidth}{0.4pt}
+\renewcommand{\arraystretch}{1.25}
+
+% Two-column zebra-banded longtable
+\newenvironment{cheattable}[3]
+{%
+  \begingroup
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}%
+  \setlength{\LTpre}{4pt}\setlength{\LTpost}{4pt}%
+  \rowcolors{2}{white}{rcfeStripe}%
+  \begin{longtable}{|#1|}
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} \\ \hline
+  \endfirsthead
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} \\ \hline
+  \endhead
+  \hline \multicolumn{2}{r}{\footnotesize\itshape\color{rcfeRule}continued on next page \ldots}\\
+  \endfoot
+  \hline
+  \endlastfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+
+% Three-column zebra-banded longtable
+\newenvironment{cheattablethree}[4]
+{%
+  \begingroup
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}%
+  \setlength{\LTpre}{4pt}\setlength{\LTpost}{4pt}%
+  \rowcolors{2}{white}{rcfeStripe}%
+  \begin{longtable}{|#1|}
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} &
+  {\color{white}\sffamily\bfseries #4} \\ \hline
+  \endfirsthead
+  \hline
+  \rowcolor{rcfeAccent}
+  {\color{white}\sffamily\bfseries #2} &
+  {\color{white}\sffamily\bfseries #3} &
+  {\color{white}\sffamily\bfseries #4} \\ \hline
+  \endhead
+  \hline \multicolumn{3}{r}{\footnotesize\itshape\color{rcfeRule}continued on next page \ldots}\\
+  \endfoot
+  \hline
+  \endlastfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+
+% Row helpers (no zebra macro -- xcolor's \rowcolors handles banding)
+\newcommand{\tr}[2]{#1 & #2 \\ \hline}
+\newcommand{\trr}[3]{#1 & #2 & #3 \\ \hline}
+
+% ---------------------------------------------------------------------
+%  CALLOUT BOX -- used on cover & disclaimer only (NOT in core tables)
+% ---------------------------------------------------------------------
+\newtcolorbox{rcfecallout}[1][]{%
+  enhanced, breakable,
+  colback=rcfeAccentSoft, colframe=rcfeAccent,
+  boxrule=0.6pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\sffamily\bfseries\color{white},
+  coltitle=white,
+  title style={left color=rcfeAccent, right color=rcfeAccent},
+  #1
+}
+
+% ---------------------------------------------------------------------
+%  COVER TITLE BLOCK
+% ---------------------------------------------------------------------
+\newcommand{\rcfeCover}{%
+  \thispagestyle{cover}%
+  \noindent
+  \begin{tcolorbox}[
+    enhanced, sharp corners, boxrule=0pt,
+    colback=rcfeNavyDeep, coltext=white,
+    left=18pt, right=18pt, top=22pt, bottom=22pt,
+    overlay={\node[anchor=south east, xshift=-14pt, yshift=14pt]
+      at (frame.south east)
+      {\color{rcfeGold}\sffamily\bfseries\Large \DocEdition};}
+  ]
+    {\sffamily\fontsize{10}{12}\selectfont
+      \color{rcfeGold}\textbf{\MakeUppercase{\DocOverline}}}\\[10pt]
+    {\sffamily\fontsize{30}{34}\selectfont\bfseries \DocTitle}\\[8pt]
+    {\sffamily\fontsize{16}{18}\selectfont \DocSubtitle}\\[18pt]
+    {\sffamily\fontsize{10}{12}\selectfont
+      \color{rcfeGold}{\rule{60pt}{1.5pt}}}\\[6pt]
+    {\sffamily\fontsize{10}{14}\selectfont \DocTagline}\\[12pt]
+    {\sffamily\fontsize{9}{12}\selectfont
+      \textbf{Author:} \DocAuthor \quad\textbar\quad
+      \textbf{Year:} \DocYear \quad\textbar\quad
+      \textbf{Version:} \DocVersion}
+  \end{tcolorbox}%
+}
+
+% Small helper for "minute" / "hour" / "day" units in tables
+\newcommand{\unit}[1]{\textsf{\small #1}}
+
+\endinput
