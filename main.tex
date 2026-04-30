@@ -19,30 +19,33 @@
 \usepackage{rcfecheat}
 
 % --- Variables (numbers, dates, names) and metadata (title/edition) ---
-\input{config/variables}
-\input{config/metadata}
+% Explicit .tex extensions help LaTeX editors (VS Code, TeXstudio,
+% TeXShop, etc.) follow the input chain so macros defined here are
+% recognized by the editor's syntax checker.
+\input{config/variables.tex}
+\input{config/metadata.tex}
 
 \begin{document}
 
 % --- Front matter (Roman numerals) ---
 \pagenumbering{roman}
-\input{sections/00-cover}
+\input{sections/00-cover.tex}
 
 % --- Core exam tables (Arabic numerals) ---
 \clearpage
 \pagenumbering{arabic}
-\input{sections/01-master-timeline}
-\input{sections/02-critical-values}
-\input{sections/03-shall-vs-may}
-\input{sections/04-red-flag-penalties}
+\input{sections/01-master-timeline.tex}
+\input{sections/02-critical-values.tex}
+\input{sections/03-shall-vs-may.tex}
+\input{sections/04-red-flag-penalties.tex}
 
 % --- Topic deep-dives ---
-\input{sections/05-resident-rights}
-\input{sections/06-reporting-matrix}
-\input{sections/07-medication}
-\input{sections/08-capacity-tiers}
+\input{sections/05-resident-rights.tex}
+\input{sections/06-reporting-matrix.tex}
+\input{sections/07-medication.tex}
+\input{sections/08-capacity-tiers.tex}
 
 % --- Rapid-lookup citation index (always last) ---
-\input{sections/90-citation-index}
+\input{sections/90-citation-index.tex}
 
 \end{document}
